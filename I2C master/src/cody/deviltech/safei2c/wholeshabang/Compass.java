@@ -9,10 +9,31 @@
 */
 package cody.deviltech.safei2c.wholeshabang;
 
+import edu.wpi.first.wpilibj.DigitalModule;
+import edu.wpi.first.wpilibj.I2C;
+
 /**
  *
  * @author Cody
  */
 public class Compass {
+    
+    private I2C cRead, cWrite;
+    
+    public Compass(){
+    
+        cRead = new I2C(DigitalModule.getInstance(1), 0x3D);
+        cWrite = new I2C(DigitalModule.getInstance(1), 0x3C);
+        
+    }
+    
+    public void setupCompass(){
+        
+        cWrite.write(0, 0x74); //75 Hz
+        cWrite.write(1, 0x40); //1.9 Ga
+        cWrite.write(2, 0); //continuous mode
+        
+    }
+
     
 }

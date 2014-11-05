@@ -13,10 +13,31 @@ wonderful they are!
 */
 package cody.deviltech.safei2c.wholeshabang;
 
+import edu.wpi.first.wpilibj.DigitalModule;
+import edu.wpi.first.wpilibj.I2C;
+
+
 /**
  *
  * @author Cody
  */
 public class Gyroscope {
+    
+    private I2C gWrite, gRead;
+    
+    public Gyroscope(){
+        
+        gWrite = new I2C(DigitalModule.getInstance(1), 0xD1);
+        gRead = new I2C(DigitalModule.getInstance(1), 0xD0);
+        
+    }
+    
+    public void setupGyro(){
+        
+        gWrite.write(21, 9);
+        gWrite.write(22, 0x1b);
+        gWrite.write(62, 0x33);
+        
+    }
     
 }

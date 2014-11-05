@@ -23,55 +23,81 @@ public class Master {
     Accelerometer accel;
     Gyroscope gyro;
     Compass comp;
-    Communications comm; //communicationizing
-    
-    //devices
-    public final String ACCEL = "a";
-    public final String GYRO = "g";
-    public final String COMP = "c";
+    public boolean clear = true;
+
     
     public Master(){
         
         accel = new Accelerometer();
         gyro = new Gyroscope();
         comp = new Compass();
-        comm = new Communications();
+        clear = true;
         
     }
     
-    
+    public boolean checkClear(){
+        
+        if(clear){
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
     
     //start a new thread?
     
-    
-    
-    public boolean transaction(){
-        
-        //if there is an active transaction, return true
-        return true;
-        
-    }
-    
-    public void start(String device){
-        
-        //start a new transaction only if the bus is clear!
-        if(device.equals("a")){ //accelerometer
+    public void readGyro(){
+        if(checkClear()){
             
-            
-        } else if(device.equals("c")){ //compass
-            
-            
-        } else if(device.equals("g")){ //gyroscope
-            
+            //proceed with reading
             
         }
         
     }
     
-    public void end(){
+    public void setupGyro(){
+        if(checkClear()){
+            
+            //proceed with reading
+            
+        }
         
-        
-                
-    } 
+    }
     
+    public void readCompass(){
+        if(checkClear()){
+            
+            //proceed with reading
+            
+        }
+        
+    }
+    
+    public void setupCompass(){
+        if(checkClear()){
+            
+            //proceed with reading
+            
+        }
+        
+    }
+    
+    public void readAccelerometer(){
+        if(checkClear()){
+            
+            //proceed with reading
+            
+        }
+        
+    }
+    
+    public void setupAccelerometer(){
+        if(checkClear()){
+            
+            //proceed with reading
+            
+        }
+        
+    }    
 }
