@@ -40,4 +40,10 @@ public class Gyroscope {
         
     }
     
+    public void readGyro(){
+        
+        
+        
+    }
+    
 }

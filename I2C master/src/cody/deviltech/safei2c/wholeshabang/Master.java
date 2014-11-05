@@ -49,54 +49,54 @@ public class Master {
     
     public void readGyro(){
         if(checkClear()){
-            
+           clear = false; 
             //proceed with reading
-            
+            clear = true;
         }
         
     }
     
     public void setupGyro(){
         if(checkClear()){
-            
+           clear = false; 
             //proceed with reading
-            
+            clear = true;
         }
         
     }
     
     public void readCompass(){
         if(checkClear()){
-            
-            //proceed with reading
-            
+           clear = false; 
+            comp.readCompass();
+            clear = true;
         }
         
     }
     
     public void setupCompass(){
         if(checkClear()){
-            
-            //proceed with reading
-            
+           clear = false; 
+            comp.setupCompass();
+            clear = true;
         }
         
     }
     
     public void readAccelerometer(){
         if(checkClear()){
-            
-            //proceed with reading
-            
+           clear = false; 
+            accel.readAccel();
+            clear = true;
         }
         
     }
     
     public void setupAccelerometer(){
         if(checkClear()){
-            
-            //proceed with reading
-            
+           clear = false; 
+            accel.setupAccelerometer();
+            clear = true;
         }
         
     }    

@@ -27,13 +27,18 @@ public class Compass {
         
     }
     
-    public void setupCompass(){
-        
+    public void setupCompass(){ //NEVER CALL ANYTHING IN THIS CLASS UNLESS YOU WANT
+                                    //TO DIE!
         cWrite.write(0, 0x74); //75 Hz
         cWrite.write(1, 0x40); //1.9 Ga
         cWrite.write(2, 0); //continuous mode
         
     }
 
+    public void readCompass(){
+        
+        //read things
+        
+    }
     
 }

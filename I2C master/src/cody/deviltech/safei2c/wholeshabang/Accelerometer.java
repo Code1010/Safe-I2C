@@ -38,4 +38,12 @@ public class Accelerometer {
         //add more stuff that translates accelerometer gobbleygook into actual values
     }
     
+    public void readAccel(){
+        
+        aRead.read(50, accelByte, accelBuffer);
+        accelX = DTlib.accelByteCombo(accelBuffer[1], accelBuffer[0]);
+        accelY = DTlib.accelByteCombo(accelBuffer[3], accelBuffer[2]);
+        
+    }
+    
 }
